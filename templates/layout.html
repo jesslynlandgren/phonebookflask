@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      {% block head%}
+      <meta charset="utf-8">
+      <title>{{title}}</title>
+
+        <!-- Bootstrap CSS-->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="static/css/style.css" media="screen" title="no title">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+        <!-- Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Londrina+Outline|Mallanna|Michroma|Raleway+Dots|Questrial|Raleway|Delius|Itim" rel="stylesheet">
+      {% endblock %}
+    </head>
+
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top ">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="navbar-brand navtitle" href="#">Phonebook What</div>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/"><button class="btn btn-info" type="button" name="button">See All Entries</button></a></li>
+            <li><a href="/new_entry"><button class="btn btn-info" type="button" name="button">Create a New Entry</button></a></li>
+            <li><a href="/edit_entry"><button class="btn btn-info" type="button" name="button">Edit an Entry</button></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row content">
+        <div class="col-md-3 offset-md-3"></div>
+        <div class="col-md-6">
+          {% block body %}
+            <h1>{{hello}}</h1>
+          {% endblock %}
+        </div>
+        <div class="col-md-3 offset-md-3"></div>
+      </div>
+    </div>
+  </body>
+</html>
