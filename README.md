@@ -1,4 +1,4 @@
-#Command Line Phonebook App
+#Phonebook Web App with Flask
 
 ##Summary:
 This project is a webapp for a locally hosted SQL phonebook database.  The entries in the phonebook consist of a name key connected to 2 pieces of info: a phone number and an email address.  The site provides a friendly web-based interface for the phonebook.
@@ -127,6 +127,6 @@ The forms were both created using the built in form classes in Bootstrap.
 
 ##Screenshots
 
-![Phonebook1](img/all_entries.png)
-![Phonebook2](img/create.png)
-![Phonebook3](img/edit_contact.png)
+![Phonebook1](img/all_entries.jpg)
+![Phonebook2](img/create.jpg)
+![Phonebook3](img/edit_contact.jpg)
