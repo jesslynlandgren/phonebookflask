@@ -22,7 +22,7 @@ def new_entry():
     )
 
 @app.route('/submit_new_entry', methods=['POST'])
-def submit_entry():
+def submit_new_entry():
     name = request.form.get('name')
     phone = request.form.get('phone')
     email = request.form.get('email')
@@ -34,24 +34,47 @@ def submit_entry():
     )
     return redirect('/')
 
-@app.route('/edit_entry')
-def edit_entry():
+@app.route('/update_entry')
+def update_entry():
+    idnum = request.args.get('id')
+    print idnum
+    if not idnum:
+        return redirect('/')
+    results = db.query('select * from phonebook where id = {0}'.format(idnum)).namedresult()
+    contact = results[0]
     return render_template(
-        'edit_entry.html',
-        title="Add Entry"
+        'update_entry.html',
+        contact = contact
     )
 
-@app.route('/change_entry', methods=['POST'])
-def change_entry():
+@app.route('/submit_update_entry', methods=['POST'])
+def submit_update_entry():
+    idnum = request.form.get('id')
     name = request.form.get('name')
     phone = request.form.get('phone')
     email = request.form.get('email')
-    db.insert(
-        'phonebook',
-        name=name,
-        phone=phone,
-        email=email
-    )
+    action = request.form.get('action')
+    if action == 'save':
+        db.update(
+            'phonebook',
+            id=idnum,
+            name=name,
+            phone=phone,
+            email=email
+        )
+    else:
+        db.delete(
+            'phonebook',
+            id=idnum
+        )
+    return redirect('/')
+
+@app.route('/delete_entry')
+def delete_entry():
+    idnum = request.args.get('id')
+    if not idnum:
+        return redirect('/')
+    db.delete('phonebook', id=idnum)
     return redirect('/')
 
 if __name__ == '__main__':
