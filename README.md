@@ -15,7 +15,7 @@ This project was completed as part of the Python curriculum for Digital Crafts
 * PostGreSQL locally hosted database
 * HTML/CSS
 * Bootstrap
-  -(Bootswatch Darkly theme)
+  - (Bootswatch Darkly theme)
 
 ##Requirements:
 (Cannot be run - database is currently hosted locally)
@@ -30,7 +30,7 @@ Create a web application for an existing SQL phonebook database similar to [Phon
 * Adding a new entry or updating an entry should be done via a form that pre-populates with current entry information
 
 ##Code Snippets
-All pages were built off of a "layout.html" template.  The layout template contains the neccessary header, styling, and top bar elements.  The remaining pages overwrite a div element in that template with the entry list or appropriate table.
+All pages were built off of a "layout.html" template.  The layout template contains the necessary header, styling, and top bar elements.  The remaining pages overwrite a div element in that template with the entry list or appropriate table.
 
 ```html
 {% extends 'layout.html' %}
@@ -97,7 +97,7 @@ def submit_update_entry():
         )
     return redirect('/')
 ```
-
+The forms were both created using the built in form classes in Bootstrap.
 ```HTML
 {% extends 'layout.html' %}
 
