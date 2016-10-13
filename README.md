@@ -127,6 +127,6 @@ The forms were both created using the built in form classes in Bootstrap.
 
 ##Screenshots
 
-![Phonebook1](/img/all_entries.png)
-![Phonebook2](/img/create.png)
-![Phonebook3](/img/edit_contact.png)
+![Phonebook1](img/all_entries.png)
+![Phonebook2](img/create.png)
+![Phonebook3](img/edit_contact.png)
